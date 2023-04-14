@@ -35,16 +35,10 @@ const int AirValue = 571;    // Значение сухого датчика
 const int WaterValue = 242;  // Значение погруженного датчика
 int SoilMoistureValue = 0;
 int SoilMoisturePercent = 0;
-float InTemp = 0;
-float OutTemp = 0;
+float InTemp, OutTemp;
 int Case = 0;
 int SEC, MIN, HOUR, DAY, MONTH, YEAR;
-bool Red = LOW;
-bool White = LOW;
-bool Fan = LOW;
-bool Healer = LOW;
-bool Led = LOW;
-bool Pump = false;
+bool Red, White, Fan, Healer, Led, Pump;
 
 struct Data
 {
@@ -103,7 +97,7 @@ void setup()
     HOUR = rtc.getHours();
     MIN = rtc.getMinutes();
     SEC = rtc.getSeconds();
-    DAY = rtc.getDay();
+    DAY = rtc.getDate();
     MONTH = rtc.getMonth();
     YEAR = rtc.getYear();
 
@@ -238,25 +232,7 @@ void loop()
         delay(500);
     }
 
-    /*Вывод текущих настроек на дисплей
-      if ((Menu == LOW) and (Exit == LOW))
-      {
-        lcd.clear();
-        lcd.home();
-        lcd.print("Min temp"); lcd.setCursor(9, 0); lcd.print(data.MinTemp); lcd.setCursor(12,0); lcd.print("C");
-        lcd.print("Max temp"); lcd.setCursor(9,1); lcd.print(data.MaxTemp); lcd.setCursor(12,1); lcd.print("C");
-        delay(3000);
-        lcd.clear();
-        lcd.home();
-        lcd.print("Sunrise"); lcd.setCursor(8, 0); lcd.print(data.Sunrise); lcd.setCursor(12,0); lcd.print(":"); lcd.setCursor(12,0); lcd.print("00");
-        lcd.print("Sunset"); lcd.setCursor(7,1); lcd.print(data.Sunset); lcd.setCursor(12,1); lcd.print(":"); lcd.setCursor(12,1); lcd.print("00");
-        delay(3000);
-
-
-      }
-  */
-
-  /*Запись настроек*/
+  /*Запись настроек в EEPROM*/
     if ((Left == LOW) and (Right == LOW))
     {
         lcd.clear();
@@ -372,6 +348,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -413,6 +390,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -454,6 +432,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -495,6 +474,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -536,6 +516,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -577,6 +558,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -618,6 +600,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -659,6 +642,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -700,6 +684,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -742,6 +727,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -784,6 +770,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -826,6 +813,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -868,6 +856,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -893,7 +882,7 @@ void loop()
         lcd.print(Case);
         lcd.setCursor(0, 1);
         lcd.print("Day");
-        DAY = rtc.getDay();
+        DAY = rtc.getDate();
 
         while (true)
         {
@@ -910,6 +899,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -919,7 +909,7 @@ void loop()
                 delay(250);
             }
 
-            if ((Right == LOW) and (DAY >= 0) and (DAY < 30))
+            if ((Right == LOW) and (DAY >= 0) and (DAY <= 30))
             {
                 DAY++;
                 delay(250);
@@ -952,6 +942,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
@@ -994,6 +985,7 @@ void loop()
             if (Exit == LOW)
             {
                 Case = 0;
+                delay(250);
                 break;
             }
 
