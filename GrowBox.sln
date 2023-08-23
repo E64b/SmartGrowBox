@@ -4,9 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{AE1376CF-9C8C-45DA-A11D-5FFE2FA532FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{2F6AE418-192A-4A90-BA3C-415E81536080}"
 	ProjectSection(SolutionItems) = preProject
 		main.ino = main.ino
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{7B941B4C-673D-4C6B-AB6C-3C48D8581EF4}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
