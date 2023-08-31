@@ -7,7 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{8C0E6AF1-B370-4AA9-A0DE-BE04D1BE3F98}"
 	ProjectSection(SolutionItems) = preProject
+		debug.cpp = debug.cpp
+		display.cpp = display.cpp
+		executors.cpp = executors.cpp
+		keys.cpp = keys.cpp
+		main.h = main.h
 		main.ino = main.ino
+		sensors.cpp = sensors.cpp
+		setting.cpp = setting.cpp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{640534A9-9A90-4F35-91D8-EB2E9BDD7358}"
